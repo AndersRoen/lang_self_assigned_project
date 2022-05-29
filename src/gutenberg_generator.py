@@ -192,7 +192,7 @@ def parse_args():
     # initialize argparse
     ap = argparse.ArgumentParser()
     # add command line parameters
-    ap.add_argument("-t", "--text_name", required=True, help="the name of the classification report")
+    ap.add_argument("-t", "--text_name", required=True, help="the name of the generated txt file")
     ap.add_argument("-em", "--embed_dim", required = True, help = "the size of the embedding layer of the model")
     ap.add_argument("-tr", "--train_size", required = True, help = "the size of the training dataset, measured in characters")
     ap.add_argument("-ep", "--eps", required=True, help="the amount of epochs you want the model to train")
