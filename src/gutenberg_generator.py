@@ -75,12 +75,16 @@ def build_model(ids_from_chars, embed_dim):
     class MyModel(tf.keras.Model):
         def __init__(self, vocab_size, embedding_dim, rnn_units): #initializing the object
             super().__init__(self)
-            self.embedding = tf.keras.layers.Embedding(vocab_size, embedding_dim)
+            # defining the embedding layer
+            self.embedding = tf.keras.layers.Embedding(vocab_size, embedding_dim) 
+            # defining the RNN layer
             self.gru = tf.keras.layers.GRU(rnn_units,
                                                  return_sequences = True,
                                                  return_state = True)
+            # defining the output layer
             self.dense = tf.keras.layers.Dense(vocab_size)
         
+        # defining a function that maintains the internal state of the model
         def call(self, inputs, states = None, return_state = False, training = False):
             x = inputs
             x = self.embedding(x, training = training)
@@ -178,7 +182,7 @@ def generate_text(start_word, gen_length, one_step_model, text_name):
     print(result[0].numpy().decode("utf-8"), "\n\n" + "_"*80)
     print("\Run time:", end - start)
     
-    outpath = os.path.join("output", text_name)
+    outpath = os.path.join("out", text_name)
     with open(outpath, "w") as text_file:
         text_file.write(str(result))
         
