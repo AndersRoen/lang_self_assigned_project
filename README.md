@@ -16,7 +16,7 @@ Then, the predictor model is defined, again building a ```Class``` object. This 
 Lastly, the script generates text. It does this by taking a user-defined start word, and then predicts the next characters after that. The length of the text is also user-defined.
 
 ## Usage
-To run this script, you should first unzip the gutenberg corpus in the ```in``` folder. Then, you should run the ```lang_setup.sh``` script. After that, point the command line to ```lang_self_assigned_project``` folder.
+To run this script, you should first download the gutenberg corpus from here: https://github.com/aparrish/gutenberg-poetry-corpus and put it in the ```in``` folder. Then, you should run the ```lang_setup.sh``` script. After that, point the command line to ```lang_self_assigned_project``` folder.
 The script has the follow command line arguments that are needed for the code to run:
  - ```-t``` which is the name of the generated ```txt``` file
  -  ```-e``` which is the size of the embedding layer, I set this to 256
